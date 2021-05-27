@@ -185,6 +185,10 @@ Navbar
 .logo {
   width: 12rem;
 }
+.nav-center img{
+  height:78px;
+  width:50
+}
 /* 
 ====== 
 About
@@ -235,7 +239,7 @@ Cocktails List
   margin: 0 auto;
   max-width: var(--fullWidth);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(370.8px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300.8px, 1fr));
   column-gap: 1.8rem;
   row-gap: 1.8rem;
   /* align-items: start; */
@@ -254,6 +258,17 @@ Cocktail
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: var(--mainBorderRadius);
+}
+
+.gif{
+  width: 100%;
+}
+.gif img{
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+  height:auto;
+  width:auto;
+  margin:20px auto;
 }
 .cocktail:hover {
   box-shadow: var(--darkShadow);
@@ -318,6 +333,7 @@ Cocktail
 
 .cocktail-section {
   text-align: center;
+
 }
 .drink {
   width: var(--smallWidth);
@@ -336,7 +352,7 @@ Cocktail
   margin-right: 0.5rem;
 }
 .drink-info {
-  padding-top: 2rem;
+  padding-top: 0;
 }
 @media screen and (min-width: 992px) {
   .drink {

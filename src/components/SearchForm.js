@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-export default function SearchForm({ setSearchForm, searchTerm }) {
+export default function SearchForm({ setSearchTerm }) {
   // const id = useParams(id);
 
-  return (
-    <form class="form search-form section">
-      <h2 className="section-title"> search form </h2>
+  const searchValue = useRef('');
 
-      <div className="form-control">
-        <label htmlFor="search">Search your key word </label>
-        <input type="text" id="search" name="search" value={searchTerm} className="form-control" onChange={setSearchForm} />
-      </div>
-    </form>
+  useEffect(() => {
+    searchValue.current.focus();
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const setSearch = () => {
+    setSearchTerm(searchValue.current.value);
+  };
+  return (
+    <section className="section">
+      <h2 className="section-title"> search form </h2>
+      <form class="search-form form" onSubmit={handleSubmit}>
+        <div className="form-control">
+          <label htmlFor="search">Search your key word </label>
+          <input type="text" id="search" name="search" ref={searchValue} onChange={setSearch} />
+        </div>
+      </form>
+    </section>
   );
 }
