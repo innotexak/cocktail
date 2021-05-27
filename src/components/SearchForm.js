@@ -1,8 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 export default function SearchForm({ setSearchTerm }) {
-  // const id = useParams(id);
-
   const searchValue = useRef('');
 
   useEffect(() => {
